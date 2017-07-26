@@ -1,0 +1,24 @@
+<h1>Settings</h1>
+
+<label class="label-heading">Choose your bidding strategy</label><br>
+<input type="radio" id="manual" name="bidding" value="manual" [(ngModel)]="bidding">
+<label for="manual">Manual</label>
+<input type="radio" id="automatic" name="bidding" value="automatic" [(ngModel)]="bidding">
+<label for="automatic">Automatic
+    <span class="normal-weight-text">(recommended)</span>
+</label>
+
+<br>
+
+<label class="label-heading">Please select the demographics you would like to target 
+    <span class="small-text medium-grey-text normal-weight-text">(multi-select)</span>
+</label><br>
+
+<div *ngFor="let d of demographics">
+    <input type="checkbox" name="demographics" id="{{d.value}}" value="{{d.value}}" [(ngModel)]="d.checked" />
+    <label for="{{d.value}}">{{d.name}}</label>
+</div>
+
+<br>
+
+<input type="button" value="Next">
